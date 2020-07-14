@@ -74,35 +74,18 @@ public class NumberService {
         return automobileNumber;
     }
 
-    // n
-    // n % 10 = 7 -> ['','','',7,'','']
-    // n / 10 = m
-    // m % 10 = 5 -> ['', '',5,7,'','']
-    // m / 10 = k
-    // k % 10 = 4 -> ['', 4,5,7,'','']
-    // k / 10 = s
-    // s % 12 = 4 -> ['',4,5,7,'',M]
-    // s / 12 = t
-    // t % 12 = 5 -> ['',4,5,7,H,M]
-    // t / 12 = r
-    // r % 12 = 1 -> [B, 4,5,7,H,M]
-
-
-
-
-
     private String generateNumber(Integer code) {
-        char[] charArrayNuber = new char[6];
+        char[] charArrayNumber = new char[6];
         for (int i = 0; i < 3; i++) {
-            charArrayNuber[3 - i] = Character.forDigit(code % 10, 10);
+            charArrayNumber[3 - i] = Character.forDigit(code % 10, 10);
             code /= 10;
         }
-        charArrayNuber[5] = letterMap.get(code % mapSize);
+        charArrayNumber[5] = letterMap.get(code % mapSize);
         code /= mapSize;
-        charArrayNuber[4] = letterMap.get(code % mapSize);
+        charArrayNumber[4] = letterMap.get(code % mapSize);
         code /= mapSize;
-        charArrayNuber[0] = letterMap.get(code % mapSize);
+        charArrayNumber[0] = letterMap.get(code % mapSize);
 
-        return String.valueOf(charArrayNuber) + WHITESPACE + numberSuffix;
+        return String.valueOf(charArrayNumber) + WHITESPACE + numberSuffix;
     }
 }
