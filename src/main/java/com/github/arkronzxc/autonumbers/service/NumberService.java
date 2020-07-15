@@ -53,7 +53,7 @@ public class NumberService {
         int counter = 0;
         do {
             counter++;
-            code = random.nextInt(1000000);
+            code = random.nextInt(10000000);
 
         } while (repository.hasKey(code) && counter < 10);
         if (counter == 10) {
