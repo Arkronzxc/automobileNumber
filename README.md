@@ -1,3 +1,3 @@
 ## Usage
-./gradlew bootJar
-docker-compose up --build -d
+#### ./gradlew bootJar
+#### docker-compose up --build -d
